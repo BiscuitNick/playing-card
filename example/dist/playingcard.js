@@ -9,16 +9,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@biscuitnick/playing-card/dist/playing-card.umd.min.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@biscuitnick/playing-card/dist/playing-card.umd.min.js ***!
-  \*****************************************************************************/
-/***/ ((module, exports, __webpack_require__) => {
-
-eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(e){ true?!(__WEBPACK_AMD_DEFINE_FACTORY__ = (e),\n\t\t__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?\n\t\t(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :\n\t\t__WEBPACK_AMD_DEFINE_FACTORY__),\n\t\t__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0}((function(){\"use strict\";customElements.define(\"playing-card\",class extends HTMLElement{constructor(){self=super(),self.card=self.getAttribute(\"card\");const e=document.createElement(\"template\");e.innerHTML=`<div>\\n      ${self.card}\\n      </div>`;const n=e.content;self.attachShadow({mode:\"open\"}).appendChild(n.cloneNode(!0))}})}));\n\n\n//# sourceURL=webpack:///./node_modules/@biscuitnick/playing-card/dist/playing-card.umd.min.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -26,7 +16,17 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!functio
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _biscuitnick_playing_card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @biscuitnick/playing-card */ \"./node_modules/@biscuitnick/playing-card/dist/playing-card.umd.min.js\");\n/* harmony import */ var _biscuitnick_playing_card__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_biscuitnick_playing_card__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _biscuitnick_playing_card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @biscuitnick/playing-card */ \"../package/dist/playing-card.umd.min.js\");\n/* harmony import */ var _biscuitnick_playing_card__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_biscuitnick_playing_card__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "../package/dist/playing-card.umd.min.js":
+/*!***********************************************!*\
+  !*** ../package/dist/playing-card.umd.min.js ***!
+  \***********************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(e){ true?!(__WEBPACK_AMD_DEFINE_FACTORY__ = (e),\n\t\t__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?\n\t\t(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :\n\t\t__WEBPACK_AMD_DEFINE_FACTORY__),\n\t\t__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0}((function(){\"use strict\";customElements.define(\"playing-card\",class extends HTMLElement{constructor(){self=super(),self.card=self.getAttribute(\"card\"),self.width=self.getAttribute(\"width\")||100,self.height=self.getAttribute(\"height\")||140,self.wrapStyle=self.getAttribute(\"wrapStyle\")||!1;const e=document.createElement(\"template\").content;self.attachShadow({mode:\"open\"}).appendChild(e.cloneNode(!0))}connectedCallback(){const e=this.shadowRoot,t=document.createElement(\"div\");t.className=\"card-div-wrapper\",self.wrapStyle&&(console.log(\"adding style\",self.wrapStyle),t.style=self.wrapStyle),t.style.width=`${self.width}px`,t.style.height=`${self.height}px`;const l=document.createElement(\"img\");l.src=`https://raw.githubusercontent.com/BiscuitNick/playing-card/master/deck/${self.card}.png`,l.alt=self.card,l.style.width=\"100%\",l.style.height=\"100%\",l.className=\"card-image\",t.appendChild(l),e.appendChild(t)}})}));\n\n\n//# sourceURL=webpack:///../package/dist/playing-card.umd.min.js?");
 
 /***/ })
 

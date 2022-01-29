@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="./node_modules/listree/dist/listree.min.css"
-    />
-    <title>Listree Example</title>
   </head>
-  <body>
+  <body
+    style="display: grid; grid-auto-flow: column; justify-content: space-evenly"
+  >
+    <playing-card card="Th"></playing-card>
+    <playing-card card="Jh"></playing-card>
     <playing-card card="Qh"></playing-card>
-    <script src="./node_modules/@biscuitnick/playing-card/dist/playing-card.umd.min.js"></script>
+    <playing-card card="Kh"></playing-card>
+    <playing-card card="Ah"></playing-card>
+
+    <script src="https://unpkg.com/@biscuitnick/playing-card@0.0.2/dist/playing-card.umd.min.js"></script>
   </body>
 </html>
