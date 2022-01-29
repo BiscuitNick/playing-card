@@ -1,6 +1,6 @@
 {
   "name": "@biscuitnick/playing-card",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom Element Playing Card",
   "module": "dist/playing-card.esm.min.js",
   "browser": "dist/playing-card.umd.min.js",
