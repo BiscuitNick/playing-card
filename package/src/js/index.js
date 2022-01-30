@@ -21,6 +21,20 @@ customElements.define(
         .appendChild(templateContent.cloneNode(true));
     }
 
+    static get observedAttributes() {
+      return [
+        "card",
+        "width",
+        "height",
+        "wrapStyle",
+        "frontStyle",
+        "backStyle",
+        "imageStyle",
+        "flipped",
+        "transition",
+      ];
+    }
+
     connectedCallback() {
       const shadow = this.shadowRoot;
       const card = this.card;
@@ -96,6 +110,53 @@ customElements.define(
       cardInner.appendChild(cardBack);
       cardFront.appendChild(cardImage);
       shadow.appendChild(cardWrapper);
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+      console.log(name, oldValue, newValue);
+
+      cardWrapper = this.cardWrapper;
+      cardInner = this.cardInner;
+      cardFront = this.cardFront;
+      cardBack = this.cardBack;
+      cardImage = this.cardImage;
+
+      if (this.wrapperStyle) {
+        cardWrapper.style = this.wrapperStyle;
+      }
+      cardWrapper.className = "cardWrapper";
+      cardWrapper.style.width = `${this.width}px`;
+      cardWrapper.style.height = `${this.height}px`;
+      cardWrapper.style.perspective = `1000px`;
+      cardWrapper.style.transition = `transform ${this.transition}s`;
+
+      cardInner.style.transition = `transform ${this.transition}s`;
+
+      if (this.frontStyle) {
+        cardFront.style = this.frontStyle;
+      }
+      cardFront.style.position = `absolute`;
+      cardFront.style.backfaceVisibility = "hidden";
+      cardFront.style.width = `100%`;
+      cardFront.style.height = `100%`;
+
+      cardImage.src = `https://raw.githubusercontent.com/BiscuitNick/playing-card/master/deck/${this.card}.png`;
+      cardImage.alt = this.card;
+      if (this.imageStyle) {
+        cardImage.style = this.imageStyle;
+      }
+      cardImage.style.width = `100%`;
+      cardImage.style.height = `100%`;
+
+      cardBack.style.background = "black";
+      if (this.backStyle) {
+        cardBack.style = this.backStyle;
+      }
+      cardBack.style.position = `absolute`;
+      cardBack.style.width = `100%`;
+      cardBack.style.height = `100%`;
+      cardBack.style.transform = `rotateY(180deg)`;
+      cardBack.style.backfaceVisibility = "hidden";
     }
 
     flip() {
