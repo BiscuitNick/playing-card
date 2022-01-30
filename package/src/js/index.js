@@ -113,6 +113,8 @@ customElements.define(
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+      if (!oldValue) return null;
+
       console.log(name, oldValue, newValue);
 
       cardWrapper = this.cardWrapper;
